@@ -9,7 +9,7 @@ const CONF = {
     appSecret: '258ce2e03d8dd6f330d6d6f3423411da',
 
     // 是否使用腾讯云代理登录小程序
-    useQcloudLogin: false,
+    useQcloudLogin: true,
 
     /**
      * MySQL 配置，用来存储 session 和用户信息
@@ -20,7 +20,7 @@ const CONF = {
         host: '',
         port: 3306,
         user: 'root',
-        db: 'cAuth',
+        db: 'omoz_test',
         pass: 'omoz.2333',
         char: 'utf8mb4'
     },
@@ -29,6 +29,7 @@ const CONF = {
         /**
          * 地区简称
          * @查看 https://cloud.tencent.com/document/product/436/6224
+         * https://test-1256378396.cos.ap-guangzhou.myqcloud.com/upload/1523368207642-HkdzWr5sG.png
          */
         region: 'ap-guangzhou',
         // Bucket 名称

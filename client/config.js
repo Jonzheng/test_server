@@ -21,7 +21,10 @@ var config = {
         tunnelUrl: `${host}/weapp/tunnel`,
 
         // 上传图片接口
-        uploadUrl: `${host}/weapp/upload`
+        uploadUrl: `${host}/weapp/upload`,
+
+        //测试数据库查询
+        uplistUrl: `${host}/weapp/uplist`
     }
 };
 

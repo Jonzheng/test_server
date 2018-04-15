@@ -15,6 +15,8 @@
         "knex": "^0.13.0",
         "koa": "^2.0.0",
         "koa-bodyparser": "^3.2.0",
+        "koa-body": "^2.5.0",
+        "cos-nodejs-sdk-v5": "^2.3.8",
         "koa-log4": "^2.1.0",
         "koa-router": "^7.0.1",
         "lodash": "^4.17.4",

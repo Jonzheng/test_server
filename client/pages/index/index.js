@@ -11,6 +11,26 @@ Page({
         requestResult: ''
     },
 
+    onLoad: function(){
+        console.log("loaded")
+        return
+        console.log(config.service.uplistUrl)
+        wx.request({
+            url: config.service.uplistUrl,
+            method:'POST',
+            data: {
+                foo: 'jon',
+                bar: 'less'
+            },
+            header: {
+                'content-type': 'application/json' // 默认值
+            },
+            success: function (res) {
+                console.log(res.data.data)
+            }
+        })
+    },
+
     // 用户登录示例
     login: function() {
         if (this.data.logged) return
@@ -103,18 +123,22 @@ Page({
 
                 // 上传图片
                 wx.uploadFile({
-                    url: config.service.uploadUrl,
+                    url: config.service.uplistUrl,
                     filePath: filePath,
                     name: 'file',
-
+                    formData: {
+                        'user': 'test'
+                    },
+                    header: {
+                        'content-type': 'multipart/form-data'
+                    },
                     success: function(res){
                         util.showSuccess('上传图片成功')
                         console.log(res)
-                        res = JSON.parse(res.data)
-                        console.log(res)
-                        that.setData({
-                            imgUrl: res.data.imgUrl
-                        })
+                        //res = JSON.parse(res.data)
+                        //that.setData({
+                        //    imgUrl: res.data.imgUrl
+                        //})
                     },
 
                     fail: function(e) {

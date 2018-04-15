@@ -2,14 +2,15 @@ const Koa = require('koa')
 const app = new Koa()
 const debug = require('debug')('koa-weapp-demo')
 const response = require('./middlewares/response')
-const bodyParser = require('koa-bodyparser')
+const koaBody = require('koa-body');
 const config = require('./config')
 
 // 使用响应处理中间件
 app.use(response)
 
 // 解析请求体
-app.use(bodyParser())
+app.use(koaBody({ multipart: true, formLimit: '1024mb', jsonLimit: '1024md', textLimit: '1024mb' }));
+//app.use(koaBody());
 
 // 引入路由分发
 const router = require('./routes')

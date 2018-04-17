@@ -17,7 +17,7 @@ const CONF = {
      * 开发环境下，MySQL 的初始密码为您的微信小程序 appid
      */
     mysql: {
-        host: '',
+        host: 'https://06mdkod2.qcloud.la',
         port: 3306,
         user: 'root',
         db: 'omoz_test',

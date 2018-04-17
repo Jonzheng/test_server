@@ -9,7 +9,7 @@ const config = require('./config')
 app.use(response)
 
 // 解析请求体
-app.use(koaBody({ multipart: true, formLimit: '1024mb', jsonLimit: '1024md', textLimit: '1024mb' }));
+app.use(koaBody({ formLimit: '100mb', jsonLimit: '100md', textLimit: '100mb', multipart: true}));
 //app.use(koaBody());
 
 // 引入路由分发

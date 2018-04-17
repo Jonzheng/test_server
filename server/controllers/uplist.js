@@ -13,6 +13,8 @@ module.exports = async ctx => {
     // 获取上传之后的结果
     // 具体可以查看：
     //const data = await mysql('t_list').select('*')
+    //mysql('table').insert({a: 'b'}).returning('*').toString();
+    //mysql('table').where('published_date', '<', 2000).update({a: 'b'}).returning('*').toString();
     //const req = ctx.req;
     //console.log("--req--")
     //console.log(req)

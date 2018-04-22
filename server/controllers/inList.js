@@ -3,13 +3,13 @@ const cos = require('../qcos')
 const path = require('path')
 const fs = require('fs')
 
-const Folder = 'audio/'
+const Folder = 'image/'
 const Bucket = 'omoz-1256378396'
 const Region = 'ap-guangzhou'
 
 module.exports = async ctx => {
     var resp = ''
-    var src_path = ''
+    var src_image = ''
     let body = ctx.request.body
     var fields = body.fields
     let file = body.files.file
@@ -25,11 +25,11 @@ module.exports = async ctx => {
         Body: fs.createReadStream(file.path)
     }
 
-    function uploder(){
+    function uploder() {
         return new Promise((resolve, reject) => {
             cos.putObject(params, function (err, data) {
                 resp = err || data
-                src_path = resp['Location']
+                src_image = resp['Location']
                 resolve()
             })
         })
@@ -37,18 +37,21 @@ module.exports = async ctx => {
     //await 在async修饰的函数下,必须是Promise才有效果
     await uploder()
 
-    await mysql('t_audio').insert({
+    await mysql('t_list').insert({
         file_id: fields.file_id,
-        src_path: src_path,
+        title: fields.title,
+        serifu: fields.serifu,
+        koner: fields.koner,
+        roma: fields.roma,
+        src_image: src_image,
         c_name: fields.c_name,
         s_name: fields.s_name,
         level: fields.level,
         cate: fields.cate,
-        ski: fields.ski,
-        ver: fields.ver
+        status: 1,
     });
-    
-    ctx.state.data = src_path
+
+    ctx.state.data = src_image
 }
 
 

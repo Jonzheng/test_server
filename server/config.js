@@ -24,7 +24,7 @@ const CONF = {
         pass: 'omoz.2333',
         char: 'utf8mb4'
     },
-
+    //不用原有的封装了
     cos: {
         /**
          * 地区简称
@@ -33,7 +33,7 @@ const CONF = {
          */
         region: 'ap-guangzhou',
         // Bucket 名称
-        fileBucket: 'test',
+        fileBucket: 'omoz',
         // 文件夹
         uploadFolder: 'upload'
     },

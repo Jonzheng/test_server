@@ -39,4 +39,8 @@ router.post('/uplist', controllers.uplist)
 router.post('/upVideo', controllers.upVideo)
 router.post('/upAudio', controllers.upAudio)
 
+router.post('/inList', controllers.inList)
+router.post('/qList', controllers.qList)
+router.post('/qAudio', controllers.qAudio)
+
 module.exports = router

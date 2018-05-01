@@ -12,8 +12,9 @@ module.exports = async ctx => {
     var src_image = ''
     let body = ctx.request.body
     var fields = body.fields
+    console.log(fields)
     let file = body.files.file
-    let fileName = fields.file_id + '.MP3'
+    let fileName = fields.file_id + '.png'
     let key = path.join(Folder, fileName)
     file.name = key
 
@@ -44,8 +45,6 @@ module.exports = async ctx => {
         koner: fields.koner,
         roma: fields.roma,
         src_image: src_image,
-        c_name: fields.c_name,
-        s_name: fields.s_name,
         level: fields.level,
         cate: fields.cate,
         status: 1,

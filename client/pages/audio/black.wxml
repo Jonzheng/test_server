@@ -1,0 +1,24 @@
+
+  <view class="page-body">
+    <view class="page-head">
+        <view class="page-head-title">语音列表_ALL</view>
+        <view class="page-head-line"></view>
+    </view>
+
+    <block wx:for="{{lst_audio}}" wx:key="mid">
+        <template is="ele-audio" data="{{...item}}"/>
+    </block>
+    
+  </view>
+
+<template name="ele-audio">
+    <view class="weui-panel__bd border-tottom">
+        <navigator url="../prepare/black?file_id={{file_id}}"
+        class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{file_id}}__{{inside}}</view>
+                <view class="weui-media-box__desc">{{src}}</view>
+            </view>
+        </navigator>
+    </view>
+</template>

@@ -35,12 +35,15 @@ router.post('/message', controllers.message.post)
 //  ------  //
 router.post('/uplist', controllers.uplist)
 
-
 router.post('/upVideo', controllers.upVideo)
 router.post('/upAudio', controllers.upAudio)
 
+router.post('/uAudio', controllers.uAudio)
+
 router.post('/inList', controllers.inList)
+
 router.post('/qList', controllers.qList)
 router.post('/qAudio', controllers.qAudio)
+router.post('/qVideo', controllers.qVideo)
 
 module.exports = router

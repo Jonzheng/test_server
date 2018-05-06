@@ -1,6 +1,11 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/list/black",
+    "pages/prepare/black",
+    "pages/audio/black",
+    "pages/u_audio/black",
+
     "pages/addCgi/addCgi"
   ],
   "window":{

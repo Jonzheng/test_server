@@ -1,0 +1,117 @@
+<html>
+<header>
+    <script src="jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script>
+        var foo = 'bar'
+        $(function(){
+            console.log(foo)
+        })
+    </script>
+
+</header>
+
+
+    <div class="bar"></div>
+    <div class="box">
+        <div class="ele k50"></div>
+        <div class="ele k20"></div>
+        <div class="ele k30"></div>
+        <div class="ele k10"></div>
+        <div class="ele k40"></div>
+        <div class="ele k10"></div>
+        <div class="ele k50"></div>
+        <div class="ele k10"></div>
+        <div class="ele k30"></div>
+        <div class="ele k10"></div>
+        <div class="ele k40"></div>
+        <div class="ele k10"></div>
+        <div class="ele k50"></div>
+        <div class="ele k20"></div>
+        <div class="ele k30"></div>
+        <div class="ele k10"></div>
+        <div class="ele k40"></div>
+        <div class="ele k10"></div>
+        <div class="ele k10"></div>
+        <div class="ele k40"></div>
+        <div class="ele k10"></div>
+        <div class="ele k50"></div>
+        <div class="ele k10"></div>
+        <div class="ele k30"></div>
+        <div class="ele k10"></div>
+        <div class="ele k40"></div>
+        <div class="ele k10"></div>
+        <div class="ele k50"></div>
+        <div class="ele k20"></div>
+        <div class="ele k30"></div>
+        <div class="ele k50"></div>
+        <div class="ele k10"></div>
+        <div class="ele k30"></div>
+        <div class="ele k10"></div>
+        <div class="ele k40"></div>
+        <div class="ele k10"></div>
+    </div>
+
+    <div class="tri"></div>
+
+<style type="text/css">
+
+
+
+.bar{
+    position: absolute;
+    left:10px;
+    background-color: #999;
+    border:1px solid red;
+    width:10px;
+    height:100px;
+    opacity: 0.3;
+}
+
+
+.ele {
+    flex-shrink: 0;
+    width: 10px;
+    background-color: #ddd;
+    border:1px solid blue;
+    box-shadow: 0px 0px 1px 1px #fff;
+}
+
+.box{
+    border:1px solid #999;
+    height: 100px;
+    width: 424px;
+    display:flex;
+    align-items:center;
+    overflow: hidden;
+}
+
+
+
+
+.tri {
+    width: 6px; height: 6px;
+    background: linear-gradient(to top, #ddd, #ddd) no-repeat, linear-gradient(to right, #ddd, #ddd) no-repeat, linear-gradient(135deg, #fff, #fff 6px, hsla(0,0%,100%,0) 6px) no-repeat;
+    background-size: 6px 1px, 1px 6px, 6px 6px;
+    transform: rotate(-45deg);
+}
+
+
+.k10{
+    height: 10px;
+}
+.k20{
+    height: 20px;
+}
+.k30{
+    height: 30px;
+}
+.k40{
+    height: 40px;
+}
+.k50{
+    height: 50px;
+}
+
+
+</style>
+</body></html>

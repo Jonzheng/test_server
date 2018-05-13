@@ -72,7 +72,7 @@ Page({
                     function _render() {
                         var that = this
                         count += 1
-                        if (count == 463) { //不能超过9s的音频
+                        if (count == 421) { //不能超过9s的音频
                             let lst_s = []
                             for (let i=0;i<list_o.length-1;i++){
                                 if (list_o[i] < list_o[i + 1] / 2){
@@ -84,8 +84,8 @@ Page({
                             }
                             var _max = 0
                             for (let i = 0; i < list_o.length; i++) {
-                                if (i % 3 == 0){
-                                    let av = (list_o[i] + list_o[i + 1] + list_o[i + 2]) / 3
+                                if (i % 4 == 0){
+                                    let av = (list_o[i] + list_o[i + 1] + list_o[i + 2] + list_o[i + 3]) / 4
                                     let sam = Math.round(av)
                                     lst_s.push(sam)
                                     if (sam > _max) _max = sam

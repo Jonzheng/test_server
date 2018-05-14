@@ -11,7 +11,7 @@
         <view class="box-ori">
             <image src="{{icon_play}}" bindtap="load_src" class="btn-ori"></image>
             <block wx:for="{{shadow}}" wx:key="mid">
-                <view class="ele-ori" style="height:{{item}}rpx;"></view>
+                <view class="ele-ori" style="height: {{item}}rpx;"></view>
             </block>
         </view>
 

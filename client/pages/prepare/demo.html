@@ -9,9 +9,13 @@
     </script>
 
 </header>
-
-
+<!--
+    INSERT INTO t_pro_gift( _id, name, age ) VALUES ( 1, 'hello', 24 )
+    ON DUPLICATE KEY UPDATE id = 1, name = 'world', age = 55
+-->
+<body>
     <div class="bar"></div>
+    <div class="tri"></div>
     <div class="box">
         <div class="ele k50"></div>
         <div class="ele k20"></div>
@@ -50,12 +54,13 @@
         <div class="ele k40"></div>
         <div class="ele k10"></div>
     </div>
-
-    <div class="tri"></div>
+</body>
 
 <style type="text/css">
 
-
+body{
+    margin: 10px 20px;
+}
 
 .bar{
     position: absolute;
@@ -89,9 +94,9 @@
 
 
 .tri {
-    width: 6px; height: 6px;
+    width: 60px; height: 60px;
     background: linear-gradient(to top, #ddd, #ddd) no-repeat, linear-gradient(to right, #ddd, #ddd) no-repeat, linear-gradient(135deg, #fff, #fff 6px, hsla(0,0%,100%,0) 6px) no-repeat;
-    background-size: 6px 1px, 1px 6px, 6px 6px;
+    background-size: 60px 10px, 10px 60px, 60px 60px;
     transform: rotate(-45deg);
 }
 

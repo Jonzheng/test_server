@@ -46,4 +46,6 @@ router.post('/qList', controllers.qList)
 router.post('/qAudio', controllers.qAudio)
 router.post('/qVideo', controllers.qVideo)
 
+router.post('/updLogin', controllers.updLogin)
+
 module.exports = router

@@ -7,6 +7,7 @@ const Region = 'ap-guangzhou'
 
 module.exports = async ctx => {
     var resp = ''
+    var bucket_lst = []
     var src_image = ''
     var body = ctx.request.body
     console.log(body)
@@ -18,7 +19,6 @@ module.exports = async ctx => {
     var ski = flst[2]
     var ver = flst[3]
     var cate = "y"
-    //if (file_id.startsWith("s")
     var file = body.files.file
     var fileName = file_id + '.png'
     file.name = fileName
@@ -31,6 +31,29 @@ module.exports = async ctx => {
         Body: fs.createReadStream(file.path)
     }
 
+    var params_get = {
+        Bucket: "video-1256378396",
+        Region: Region,
+        Prefix: file_id
+    }
+
+    function getVideo() {
+        return new Promise((resolve, reject) => {
+            cos.getBucket(params_get, function (err, data) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    bucket_lst = data
+                }
+                resolve()
+            });
+        })
+    }
+
+    await getVideo()
+    var video_size = 0
+    if (bucket_lst["Contents"].length > 0) video_size = bucket_lst["Contents"][0].Size
+    
     function uploder() {
         return new Promise((resolve, reject) => {
             cos.putObject(params, function (err, data) {
@@ -46,6 +69,7 @@ module.exports = async ctx => {
     await mysql('t_list').insert({
         file_id: file_id,
         src_video: fields.src_video,
+        video_size: video_size,
         title: fields.title,
         serifu: fields.serifu,
         koner: fields.koner,

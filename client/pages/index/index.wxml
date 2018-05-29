@@ -6,13 +6,9 @@
 
   <view class="page-body">
     <view class="btn-area">
-
-      <navigator url="../list/black" hover-class="navigator-hover">
-        <button type="default">语音列表</button>
-      </navigator>
-
+    
       <navigator url="../audio/black" hover-class="navigator-hover">
-        <button type="default">已上传语音</button>
+        <button type="default">语音列表</button>
       </navigator>
 
     </view>

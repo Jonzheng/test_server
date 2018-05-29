@@ -12,7 +12,9 @@ Page({
         myFalse: false,
         icon_play: "../../image/play.png",
         icon_stop: "../../image/stop.png",
-        koner: ""
+        koner: "",
+        filePath: '',
+        shadow: ''
     },
 
     onLoad: function (option) {

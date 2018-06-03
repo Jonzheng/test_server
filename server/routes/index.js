@@ -46,7 +46,11 @@ router.post('/qList', controllers.qList)
 router.post('/qAudio', controllers.qAudio)
 router.post('/qVideo', controllers.qVideo)
 
-router.post('/updLogin', controllers.updLogin)
-router.post('/upRecord', controllers.upRecord)
+//--完整命名规范--
+router.post('/updateLogin', controllers.updateLogin)
+router.post('/updateUser', controllers.updateUser)
+router.post('/updateRecord', controllers.updateRecord)
+router.post('/uploadRecord', controllers.uploadRecord)
+router.post('/queryDetail', controllers.queryDetail)
 
 module.exports = router

@@ -6,6 +6,7 @@ const Bucket = 'record-1256378396'
 const Region = 'ap-guangzhou'
 
 module.exports = async ctx => {
+    var result = {}
     var src_record = ''
     var body = ctx.request.body
     console.log(body)
@@ -13,10 +14,11 @@ module.exports = async ctx => {
     console.log(file)
     var fields = body.fields
     var file_id = fields.file_id
+    var master_id = fields.openid
     var record_id = file_id + new Date().getTime()
     console.log(record_id)
 
-    var fileName = file_id + '.mp3'
+    var fileName = record_id + '.mp3'
     file.name = fileName
     
     var params = {
@@ -40,19 +42,20 @@ module.exports = async ctx => {
     await uploder()
 
     console.log(src_record)
+//(record_id,file_id,src_record,master_id,heart,status,c_date)
+    await mysql('t_record').insert({
+        record_id: record_id,
+        file_id: file_id,
+        src_record: src_record,
+        master_id: master_id
+    });
 
-    //await mysql('t_record').insert({
-    //    record_id: record_id,
-    //    file_id: file_id,
-    //    src_video: fields.src_video,
-    //    video_size: video_size,
-    //    title: fields.title,
-    //    serifu: fields.serifu,
-    //    koner: fields.koner,
-    //    roma: fields.roma,
-    //    src_image: src_image,
-    //    level: level,
-    //    cate: cate,
-    //    status: 1
-    //});
+    result["record_id"] = record_id
+    result["file_id"] = file_id
+    result["src_record"] = src_record
+    result["master_id"] = master_id
+    result["heart"] = 1
+    result["status"] = 1
+    
+    ctx.state.data = result
 }

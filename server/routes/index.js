@@ -50,6 +50,7 @@ router.post('/qVideo', controllers.qVideo)
 router.post('/updateLogin', controllers.updateLogin)
 router.post('/updateUser', controllers.updateUser)
 router.post('/updateRecord', controllers.updateRecord)
+router.post('/updateHeart', controllers.updateHeart)
 router.post('/uploadRecord', controllers.uploadRecord)
 router.post('/queryDetail', controllers.queryDetail)
 
